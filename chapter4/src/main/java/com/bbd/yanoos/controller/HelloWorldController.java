@@ -17,7 +17,7 @@ public class HelloWorldController implements Controller {
         //4、选择下一个页面
         ModelAndView mv = new ModelAndView();
         //添加模型数据 可以是任意的POJO对象
-        mv.addObject("message", "Hello World!");
+        mv.addObject("message", "Hello World4!");
         //设置逻辑视图名，视图解析器会根据该名字解析到具体的视图页面
         mv.setViewName("hello");
         return mv;
