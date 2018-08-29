@@ -26,5 +26,26 @@
 
 	<!-- 处理器 -->
 	<bean name="/hello" class="com.bbd.yanoos.controller.HelloWorldController"/>
+	<bean name="/helloWithoutReturnModelAndView" class="com.bbd.yanoos.controller.HelloWorldWithoutReturnModelAndViewController"/>
 
+	<!-- 此配置表示只支持POST请求，如果是GET请求客户端将收到“HTTP Status 405 - Request method 'GET' not supported” -->
+	<bean name="/helloWithPOST" class="com.bbd.yanoos.controller.HelloWorldController">
+		<property name="supportedMethods" value="POST,GET"></property>
+	</bean>
+
+	<!--当前请求的session前置条件检查，如果当前请求无session将抛出HttpSessionRequiredException异常-->
+	<!--<bean name="/helloRequireSession"-->
+		  <!--class="com.bbd.yanoos.controller.HelloWorldController">-->
+		<!--<property name="requireSession" value="true"/>-->
+	<!--</bean>-->
+
+	<!--客户端端缓存控制-->
+	<bean name="/helloCache"
+		  class="com.bbd.yanoos.controller.HelloWorldCacheController">
+		<property name="cacheSeconds" value="5"/>
+	</bean>
+
+	<!--Last-Modified缓存机制-->
+	<bean name="/helloLastModified"
+		  class="com.bbd.yanoos.controller.HelloWorldLastModifiedCacheController"/>
 </beans>
