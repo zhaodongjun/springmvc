@@ -37,4 +37,11 @@
         <filter-name>etagFilter</filter-name>
         <servlet-name>springmvc</servlet-name>
     </filter-mapping>
+
+    <!--servlet转发控制器-->
+    <servlet>
+        <servlet-name>forwarding</servlet-name>
+        <servlet-class>com.bbd.yanoos.controller.ForwardingServlet</servlet-class>
+    </servlet>
+
 </web-app>

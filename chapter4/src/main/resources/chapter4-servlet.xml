@@ -48,4 +48,10 @@
 	<!--Last-Modified缓存机制-->
 	<bean name="/helloLastModified"
 		  class="com.bbd.yanoos.controller.HelloWorldLastModifiedCacheController"/>
+
+	<!--servlet转发控制器,将接收到的请求转发到一个命名的servlet-->
+	<bean name="/forwardToServlet"
+		  class="org.springframework.web.servlet.mvc.ServletForwardingController">
+		<property name="servletName" value="forwarding"></property>
+	</bean>
 </beans>
