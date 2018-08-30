@@ -38,9 +38,13 @@
 	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
 		<property name="interceptors">
 			<list>
-				<ref bean="handlerInterceptor1"/>
-				<ref bean="handlerInterceptor2"/>
+				<!--<ref bean="handlerInterceptor1"/>-->
+				<!--<ref bean="handlerInterceptor2"/>-->
+				<ref bean="stopWatchHandlerInterceptor"/>
 			</list>
 		</property>
 	</bean>
+
+	<bean name="/stopWatchHandlerInterceptor" class="com.bbd.yanoos.controller.StopWatchHandlerInterceptorController" />
+	<bean id="stopWatchHandlerInterceptor" class="com.bbd.yanoos.interceptor.StopWatchHandlerInterceptor" />
 </beans>

@@ -15,6 +15,9 @@ public class HandlerInterceptor2 extends HandlerInterceptorAdapter {//此处一�
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         System.out.println("===========HandlerInterceptor2 preHandle");
         return true;
+        //中断拦截
+//        response.getWriter().write("break");
+//        return false;
     }
 
     @Override
